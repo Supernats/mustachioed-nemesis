@@ -7,11 +7,10 @@ window.GistApp = {
     GistApp.gists = new GistApp.Collections.Gists();
     GistApp.gists.fetch({
       success: function() {
-        console.log(GistApp.gists);
+        new GistApp.Routers.GistRouter({ $rootEl: $('#content') });
+        Backbone.history.start();
       }
     });
-    new GistApp.Routers.GistRouter();
-    Backbone.history.start();
   }
 };
 
