@@ -9,9 +9,9 @@ GistApp.Routers.GistRouter = Backbone.Router.extend({
 
   index: function () {
     var router = this;
-    console.log(GistApp.gists);
     var indexView = new GistApp.Views.GistsIndex({ collection: GistApp.gists });
-    this.$rootEl.html(router._swapView(indexView).render().$el);
+    var renderedContent = router._swapView(indexView).render().$el;
+    this.$rootEl.html(renderedContent);
   },
 
   _swapView: function (newView) {

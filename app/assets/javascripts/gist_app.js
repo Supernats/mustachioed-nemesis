@@ -13,7 +13,3 @@ window.GistApp = {
     });
   }
 };
-
-$(document).ready(function(){
-  GistApp.initialize();
-});
