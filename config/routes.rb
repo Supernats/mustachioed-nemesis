@@ -1,6 +1,9 @@
-NewAuthDemo::Application.routes.draw do
+GistApp::Application.routes.draw do
   resources :users, :only => [:create, :new, :show]
   resource :session, :only => [:create, :destroy, :new]
+  namespace :api, :defaults => { :format => :json } do
+    resources :gists
+  end
 
-  root :to => "users#show"
+  root :to => "root#root"
 end
